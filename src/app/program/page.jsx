@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <div>
       <Navigation navItems={navItems} />
-      <h2 className="container mx-auto px-4">Program</h2>
+      <h1 className="container mx-auto px-4">PROGRAM</h1>
       <Category />
       <BandsListe />
     </div>

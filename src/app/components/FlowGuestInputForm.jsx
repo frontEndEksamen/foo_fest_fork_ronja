@@ -7,7 +7,7 @@ import { postInfo } from "@/lib/supabase";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-export default function GuestInputForm({ isVisible, setIsVisible }) {
+export default function FlowGuestInputForm({ isVisible, setIsVisible }) {
   // hent antal billetter fra zustand store
   const { count, reservationId, reservationMessage, setReservationMessage } = useStore();
 

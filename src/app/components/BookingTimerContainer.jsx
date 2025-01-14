@@ -5,6 +5,9 @@ import React from "react";
 import { FiShoppingCart } from "react-icons/fi";
 
 export default function BookingTimerContainer({ children }) {
+  // container til bookingtimer, der håndterer logikken bag
+  // bla. wrapper denne komponenterne x x og sender startfunktionen med ned
+
   // sæt timeren til 5 minutter
   const expiryTimestamp = new Date();
   expiryTimestamp.setSeconds(expiryTimestamp.getSeconds() + 300);
@@ -34,6 +37,7 @@ export default function BookingTimerContainer({ children }) {
       message.style.zIndex = "1000";
       document.body.appendChild(message);
 
+      // baggrund når timeren løber ud
       const overlay = document.createElement("div");
       overlay.style.position = "fixed";
       overlay.style.top = "0";
@@ -51,7 +55,7 @@ export default function BookingTimerContainer({ children }) {
       }, 3000);
     },
 
-    // ikke start timeren automatisk
+    // ikke start timeren  automatisk
     autoStart: false,
   });
 

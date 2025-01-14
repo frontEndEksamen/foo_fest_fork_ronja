@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import FlowAreaAndAmount from "./FlowAreaAndAmount";
-import GuestInputForm from "./GuestInputForm";
+import FlowGuestInputForm from "./FlowGuestInputForm";
 
 export default function ClientWrapper({ start }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -16,7 +16,7 @@ export default function ClientWrapper({ start }) {
         start={start}
         setIsVisible={setIsVisible}
       />
-      <GuestInputForm isVisible={isVisible} />
+      <FlowGuestInputForm isVisible={isVisible} />
     </div>
   );
 }
