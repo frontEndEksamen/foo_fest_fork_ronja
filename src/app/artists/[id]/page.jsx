@@ -82,7 +82,6 @@ export default function Artist() {
       {/* ÆNDRING: tilføj brødkrummesti */}
       <div className="flex gap-20 justify-between">
         <BackArrowButton href="/program" className="bg-orange-200" />
-        {/* <p className="self-center">{`Home / Program / ${(<span>${band.name}</span>)}`}</p> */}
 
         <p className="self-center font-bold">
           <span className="font-normal">Home / Program /</span>
@@ -109,7 +108,12 @@ export default function Artist() {
 
           <div className="text-right max-md:text-center">
             <h5 className="text-orange-300">Members:</h5>
-            <span>{band.members ? band.members.join(", ") : "No members listed"}</span>
+            {/* ÆNDRING: map igennem artists, lave en liste */}
+            <ul className="list-inside">
+              {band.members
+                ? band.members.map((member) => <li key={member}>{member}</li>)
+                : "No members listed"}
+            </ul>
           </div>
         </div>
       </div>
