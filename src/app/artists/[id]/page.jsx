@@ -31,9 +31,7 @@ export default function Artist() {
 
     for (const scene in schedule) {
       for (const day in schedule[scene]) {
-        const events = schedule[scene][day].filter((event) =>
-          event.act.includes(bandName)
-        );
+        const events = schedule[scene][day].filter((event) => event.act.includes(bandName));
 
         if (events.length > 0) {
           events.forEach((event) => {
@@ -81,9 +79,20 @@ export default function Artist() {
     <>
       <Navigation navItems={[{ linkText: "Program", href: "/program" }]} />
       <HeroArtists genre={band.genre} band={band} />
-      <BackArrowButton href="/program" />
+      {/* ÆNDRING: tilføj brødkrummesti */}
+      <div className="flex gap-20 justify-between">
+        <BackArrowButton href="/program" className="bg-orange-200" />
+        {/* <p className="self-center">{`Home / Program / ${(<span>${band.name}</span>)}`}</p> */}
+
+        <p className="self-center font-bold">
+          <span className="font-normal">Home / Program /</span>
+          {` ${band.name}`}
+        </p>
+      </div>
+
       <div className="container band-desc-container mx-auto flex flex-col justify-center w-[65vw]">
         <h4 className="text-orange-300">{band.name}</h4>
+
         <p className="band-description text-base text-justify">{band.bio}</p>
 
         <div className="container stage-and-members-container flex justify-between gap-4 mt-6 max-md:flex-col max-md:justify-center max-md:text-center">
@@ -92,8 +101,7 @@ export default function Artist() {
             {getScheduleForBand(band.name).length > 0
               ? getScheduleForBand(band.name).map((event) => (
                   <span key={event.id}>
-                    {event.scene} - {mapDayToName(event.day)}, {event.start} -{" "}
-                    {event.end}
+                    {event.scene} - {mapDayToName(event.day)}, {event.start} - {event.end}
                   </span>
                 ))
               : null}
@@ -101,9 +109,7 @@ export default function Artist() {
 
           <div className="text-right max-md:text-center">
             <h5 className="text-orange-300">Members:</h5>
-            <span>
-              {band.members ? band.members.join(", ") : "No members listed"}
-            </span>
+            <span>{band.members ? band.members.join(", ") : "No members listed"}</span>
           </div>
         </div>
       </div>
