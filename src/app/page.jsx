@@ -3,6 +3,8 @@ import Hero from "../app/components/Hero.jsx";
 import Navigation from "../app/components/Navigation.jsx";
 import GuestPassPriceCalculator from "../app/components/GuestPassPriceCalculator.jsx";
 import ImageSlider from "@/app/components/ImageSlider";
+import HomeAboutUs from "@/app/components/HomeAboutUs";
+import HomeAboutCamping from "@/app/components/HomeAboutCamping";
 
 export default function Home() {
   const navItems = [
@@ -25,6 +27,8 @@ export default function Home() {
       {" "}
       <Navigation navItems={navItems} />
       <Hero></Hero>
+      <HomeAboutUs />
+      <HomeAboutCamping />
       <ImageSlider />
     </>
   );

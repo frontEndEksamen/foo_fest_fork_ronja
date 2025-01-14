@@ -10,7 +10,6 @@
   --body-background-color: #f9f9f9;
   --primary-text-color: #050507;
   --accent-color: #fcac66;
-  --scroll-to-top-btn-background-color: #f9f9f9;
 
   /* Font Sizes */
   --heading-one-font-size: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
@@ -96,7 +95,12 @@ h6 {
 h1 {
   font-family: "B612", sans-serif;
   font-size: var(--heading-one-font-size);
-  margin: var(--space-xl-2xl);
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    margin: var(--space-xl-2xl);
+  }
 }
 
 h2 {
@@ -136,44 +140,6 @@ label {
   font-size: var(--paragraph-font-size);
   line-height: 2;
 }
-
-/*
-fixed -right-16 bottom-8 grid place-content-center bg-scrollToTopBtnBackgroundColor shadow-md h-[50px] w-[50px] rounded-full border-2 border-orange-300 text-orange-300 outline-none transition-all duration-100 ease-in hover:bg-orange-300 hover:text-white active:transition-none active:shadow-none active:scale-95
-*/
-
-/* .scroll-to-top-btn {
-  position: fixed;
-  right: -100px;
-  bottom: 30px;
-  display: grid;
-  place-content: center;
-  color: var(--accent-color);
-  background-color: var(--scroll-to-top-btn-background-color);
-  height: 50px;
-  width: 50px;
-  border-radius: 100%;
-  border: 2px solid var(--accent-color);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  outline: none;
-  transition: color 0.2s ease-in, background 0.2s ease-in, right 0.3s ease-in;
-
-  &.active {
-    right: 30px;
-    transition: right 0.3s ease-in;
-  }
-
-  &:hover {
-    color: #fff;
-    background-color: var(--accent-color);
-    transition: color 0.2s ease-in, background 0.2s ease-in;
-  }
-
-  &:active {
-    transform: scale(0.98);
-    box-shadow: none;
-    transition: none;
-  }
-} */
 
 .full-width {
   width: 100vw;

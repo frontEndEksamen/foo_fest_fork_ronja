@@ -58,13 +58,13 @@ export default function ImageSlider() {
         </div>
         <div className="flex justify-center items-center gap-7 mt-6 w-full">
           <button
-            className="slider-control-btn flex items-center justify-center bg-scrollToTopBtnBackgroundColor border-2 border-orange-300 text-orange-300 h-[40px] w-[40px] rounded-full shadow-md transition-all duration-150 hover:bg-orange-300 hover:text-white active:shadow-none"
+            className=" flex items-center justify-center bg-body-background-color border-2 border-orange-300 text-orange-300 h-[40px] w-[40px] rounded-full shadow-md transition-all duration-150 hover:bg-orange-300 hover:text-white active:shadow-none"
             onClick={prevSlide}
           >
             <FaArrowLeftLong />
           </button>
           <button
-            className="slider-control-btn flex items-center justify-center bg-scrollToTopBtnBackgroundColor border-2 border-orange-300 text-orange-300 h-[40px] w-[40px] rounded-full shadow-md transition-all duration-150 hover:bg-orange-300 hover:text-white active:shadow-none"
+            className=" flex items-center justify-center bg-body-background-color border-2 border-orange-300 text-orange-300 h-[40px] w-[40px] rounded-full shadow-md transition-all duration-150 hover:bg-orange-300 hover:text-white active:shadow-none"
             onClick={nextSlide}
           >
             <FaArrowRightLong />

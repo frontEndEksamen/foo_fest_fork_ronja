@@ -94,7 +94,7 @@ export default function GenreOrSceneFilter() {
       <div className="flex justify-between items-center mb-8">
         <div className="pb-3.5 flex items-center align-center justify-between w-full max-md:flex-col max-md:gap-8">
           <div className="pb-3.5">
-            <label className="pb-3.5 text-heading-four">Select scene:</label>
+            <label className="pb-3.5 text-heading-four">Select stage:</label>
             <select
               className="vip-ticket-counter-background-color rounded-[20px]"
               value={selectedScene}
