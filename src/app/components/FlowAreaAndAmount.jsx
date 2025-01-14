@@ -57,12 +57,10 @@ export default function FlowAreaAndAmount({ start, setIsVisible, isDisabled, set
     // sæt amount til at være værdien af count (antal billetter)
     const reservationData = { area, amount: count };
 
-    // variabel med ny reservationId
-    const newReservationId = await putReservation(reservationData);
-    // set reservationId til at have værdi af det nye reservationId
-    setReservationId(newReservationId);
-
-    console.log("newReservationId der returneres fra PUT: ", newReservationId);
+    // variabel med returned reservationId
+    const reservationId = await putReservation(reservationData);
+    // set reservationId i store til at have værdi af det returnerede reservationId
+    setReservationId(reservationId);
 
     // set isVisible to true here
     setIsVisible(true);

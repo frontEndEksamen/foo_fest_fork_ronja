@@ -9,7 +9,7 @@ const glitchHeadersList = {
 };
 
 export default async function putReservation(reservationData) {
-  // event.preventDefault();
+  console.log("putReservation funktion kører");
   const response = await fetch("https://polarized-chrome-trouser.glitch.me/reserve-spot", {
     method: "PUT",
     headers: glitchHeadersList,
@@ -18,6 +18,7 @@ export default async function putReservation(reservationData) {
 
   const responseData = await response.json();
   const reservationId = responseData.id;
+  console.log("reservationId returneret fra putReservation: ", reservationId);
   return reservationId;
 }
 
@@ -33,6 +34,6 @@ export async function postReservation(reservationData) {
 
   const data = await response.json();
   const reservationMessage = data.message;
-  console.log("response message from POST reservation", reservationMessage);
+  console.log("returneret message fra postReservation", reservationMessage);
   return reservationMessage;
 }

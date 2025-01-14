@@ -1,5 +1,4 @@
 "use client";
-import { postReservation } from "@/lib/actions";
 import { useStore } from "@/app/store";
 import FormButton from "./FormButton";
 import GuestInput from "./GuestInput";
@@ -53,25 +52,11 @@ export default function FlowGuestInputForm({ isVisible, setIsVisible }) {
     // looper igennem guestsData og for hver guest sender den en POST request med postInfo(guestData) til supabase.
     for (const guestData of guestsData) {
       await postInfo(guestData);
-      console.log("FORMDATA SENT TO SUPABASE");
     }
 
     // ---------------------------
 
-    // -----API POST request------
-    console.log("reservationId fra GIF:  ", reservationId);
-    const reservationData = { id: reservationId };
-    console.log("dette sender vi til postReservation", reservationData);
-
-    const response = await postReservation(reservationData);
-    console.log("Response from postReservation:", response);
-    setReservationMessage(response);
-
-    // ---------------------------
-
     await router.push("./payment");
-
-    // console.log("reservationId from GuestInputForm: ", reservationId);
   }
 
   return (

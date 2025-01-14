@@ -7,12 +7,25 @@ import Button from "../components/Button";
 import FormButton from "../components/FormButton";
 import BackArrowButton from "@/app/components/BackArrowButton.jsx";
 import { useRouter } from "next/navigation";
+import { useStore } from "@/app/store";
+import { postReservation } from "@/lib/actions";
 
 export default function Payment() {
   const router = useRouter();
+  const { reservationId, setReservationMessage } = useStore();
 
   async function completeReservation(event) {
     event.preventDefault();
+
+    // -----API POST request------
+    const reservationData = { id: reservationId };
+    console.log("reservationData vi sender med til postReservation", reservationData);
+
+    const response = await postReservation(reservationData);
+    setReservationMessage(response);
+
+    // ---------------------------
+
     await router.push("./confirmation");
   }
 
