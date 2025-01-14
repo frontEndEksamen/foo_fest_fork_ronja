@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 
 export default function FlowGuestInputForm({ isVisible, setIsVisible }) {
   // hent antal billetter fra zustand store
-  const { count, reservationId, reservationMessage, setReservationMessage } = useStore();
+  const { count, reservationId, setReservationMessage } = useStore();
 
   const router = useRouter();
 

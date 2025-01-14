@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Fieldset from "./Fieldset";
 
 export default function AreaInput() {
+  // guest input til at vælge area ved at fetch areas og map igennem.
   const [data, setData] = useState([]);
   const [selectedArea, setSelectedArea] = useState(null);
 

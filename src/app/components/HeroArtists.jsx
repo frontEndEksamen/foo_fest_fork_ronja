@@ -6,7 +6,8 @@ import BandCard from "@/app/components/BandCard";
 export default function Hero({ band, genre }) {
   return (
     <Section>
-      <div className="h-[700px] full-width">
+      {/* ÆNDRING: gjort billede height mindre så man ved der er mere indhold på siden */}
+      <div className="h-[400px] full-width">
         {band?.logo && band.logo.includes("https") ? (
           <Image
             src={band.logo}
@@ -17,9 +18,7 @@ export default function Hero({ band, genre }) {
         ) : (
           <Image
             src={`https://polarized-chrome-trouser.glitch.me/logos/${
-              band?.logo && band.logo.includes(".")
-                ? band.logo
-                : `${band?.logo}.png`
+              band?.logo && band.logo.includes(".") ? band.logo : `${band?.logo}.png`
             }`}
             alt={`${band?.name} playing at a festival`}
             layout="fill"
