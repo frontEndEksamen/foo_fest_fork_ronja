@@ -6,7 +6,7 @@ import { FiShoppingCart } from "react-icons/fi";
 
 export default function BookingTimerContainer({ children }) {
   // container til bookingtimer, der håndterer logikken bag
-  // bla. wrapper denne komponenterne x x og sender startfunktionen med ned
+  // bla. wrapper denne komponenterne der skal bruge timeren og sender startfunktionen med ned
 
   // sæt timeren til 5 minutter
   const expiryTimestamp = new Date();

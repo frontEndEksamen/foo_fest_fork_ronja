@@ -31,13 +31,14 @@ export default function AreaInput() {
       {data.map((area) => (
         <div
           key={area.spots}
-          className="hover:bg-orange-100 flex items-center justify-between  rounded-2xl p-3"
+          // tilføjede cursor-pointer
+          className="hover:bg-orange-100 flex items-center justify-between  rounded-2xl p-3 cursor-pointer "
           onClick={() => handleSelection(area.area)}
         >
           <label
             className="flex justify-between cursor-pointer"
             htmlFor={area.area}
-            onClick={() => handleSelection(area.area)}
+            // fjernede onClick={() => handleSelection(area.area)}
           >
             {area.area}
           </label>

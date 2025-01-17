@@ -41,6 +41,10 @@ export default function FlowAreaAndAmount({ start, setIsVisible, isDisabled, set
       }
     };
 
+    // lav variabel der sendes med ned til putReservation (vores PUT reuquest)
+    // sæt amount til at være værdien af count (antal billetter)
+    const reservationData = { area, amount: count };
+
     // kør alert hvis antal biletter er større end antal ledige pladser
     if (count > availableSpots) {
       alert();
@@ -48,22 +52,17 @@ export default function FlowAreaAndAmount({ start, setIsVisible, isDisabled, set
     } else {
       // ellers, start timeren
       start();
-      // clear reservationID
-      setReservationId(null);
+
+      // set isDisabled på form til true kun hvis availableSpots > count
       setIsDisabled(true);
+
+      // variabel med returned reservationId
+      const reservationId = await putReservation(reservationData);
+      // set reservationId i store til at have værdi af det returnerede reservationId
+      setReservationId(reservationId);
+      // set isVisible to true here
+      setIsVisible(true);
     }
-
-    // lav variabel der sendes med ned til putReservation (vores PUT reuquest)
-    // sæt amount til at være værdien af count (antal billetter)
-    const reservationData = { area, amount: count };
-
-    // variabel med returned reservationId
-    const reservationId = await putReservation(reservationData);
-    // set reservationId i store til at have værdi af det returnerede reservationId
-    setReservationId(reservationId);
-
-    // set isVisible to true here
-    setIsVisible(true);
   }
 
   return (
